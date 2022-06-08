@@ -1,0 +1,4 @@
+/*
+This repo holds code from Cracking the coding interview on 
+Array and Strings
+*/
