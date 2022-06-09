@@ -397,7 +397,7 @@ const stringCompression = (str) => {
     return outputString;
   }
   
-//   console.log(stringCompression("aabcccccaaa"));
+  console.log(stringCompression("aabcccccaaa"));
  
   
 
@@ -451,4 +451,4 @@ const rotateMatrix = (m) => {
     return m;
 }
 
-console.log(rotateMatrix([[1, 2, 4], [2, 4, 5], [6, 9, 10]]));
+// console.log(rotateMatrix([[1, 2, 4], [2, 4, 5], [6, 9, 10]]));
