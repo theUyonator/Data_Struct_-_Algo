@@ -397,7 +397,7 @@ const stringCompression = (str) => {
     return outputString;
   }
   
-  console.log(stringCompression("aabcccccaaa"));
+//   console.log(stringCompression("aabcccccaaa"));
  
   
 
@@ -452,3 +452,107 @@ const rotateMatrix = (m) => {
 }
 
 // console.log(rotateMatrix([[1, 2, 4], [2, 4, 5], [6, 9, 10]]));
+
+/*
+1.8 
+Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0, its entire row and
+column are set to 0.
+
+Questions:
+1. Does this have to be done in place?
+2. What do we return if the matrix is empty or has no zeros
+Solution:
+I: MxN Matrix 
+O: MxN Matrix with it's rows and coloumn set to zero if an element is 0
+C: Return same array with elements replaced
+E: Empty array, Multiple zeros
+
+Space complexity: O(n) be are storing a zero indices matrix
+Time Complexity: O(MN) we are interating through an MxN matrix using nested loops
+
+Example:
+Input: [[1, 3, 6, 6],
+        [3, 4, 0, 1], 
+        [4, 6, 2, 3]
+
+Input: [[1, 3, 0, 6],
+        [0, 0, 0, 0], 
+        [4, 6, 0, 3]
+*/
+
+// We need a helper function that will take in a row, col and matrix
+// and set zeroes in each row and col in the matrix
+
+const setZeroes = (row, col, m) => {
+    for(let i = 0; i < m.length; i++){
+        m[i][col] = 0;
+    };
+    for(let j = 0; j < m[0].length; j++){
+        m[row][j] = 0;
+    }
+};
+
+const zeroMatrix = (m) => {
+    // Start by answering the edge case 
+    if(m.length === 0) return m;
+    // We need somewhere to store the
+    // zero indices 
+    let zeroInd = [];
+
+    for(let i = 0; i < m.length; i++){
+        for(let j = 0;j < m[0].length; j++){
+            if(m[i][j] === 0){
+                zeroInd.push([i, j]);
+            }
+        }
+    }
+    // console.log(zeroInd);
+    // Now we iterate over the Zero Indices and use our helper func
+    for(let ind of zeroInd){
+        let row = ind[0];
+        let col = ind[1];
+    // We call our helper function that will be setting the zeroes for us 
+        setZeroes(row, col, m);
+    }
+
+    return m;
+};
+
+// console.log(zeroMatrix([[1, 3, 6, 6],[3, 4, 0, 1], [4, 6, 2, 3]]));
+// console.log(zeroMatrix([[1, 1, 1],[1, 0, 1], [1, 1, 1]]));
+
+/*
+1.9 
+String Rotation:Assume you have a method isSubstring which checks 
+if one word is a substring of another. Given two strings, sl and s2, 
+write code to check if s2 is a rotation of sl using only one call to 
+isSubstring (e.g., "waterbottle" is a rotation of"erbottlewat").
+
+Questions:
+1. What does a rotation look like to you ?
+2. Do we need to solve it in a way we check if s2 is a substring ?
+
+Solution:
+I: 2 strings, s1
+O: Boolean
+C: Have to call isSubstring func once and onlh once 
+E: Unequal strings 
+
+Space complexity: We are saving a string so it's O(1), it isn't a reference type
+Time Complexity: Concatenating a string is O(n2) so the Big O is that
+
+Example:
+"waterbottle" is a rotation of"erbottlewat"
+
+Since we don't have the isSubstring function handy, we'll just use
+Index of
+*/
+
+const stringRotation = (s1, s2) => {
+    // In a perfect rotation s2 should be in s1+s1
+    let newStr = s1.concat(s1);
+    if(newStr.indexOf(s2) === -1) return false;
+    return true;
+}
+
+// console.log(stringRotation("waterbottle", "erbottlewat"));
