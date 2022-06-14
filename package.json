@@ -1,0 +1,22 @@
+{
+  "name": "daatstructsandalgo",
+  "version": "1.0.0",
+  "description": "Node folder for interview prep on data structures and algo",
+  "main": "arraysStrings.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theUyonator/Data_Struct_-_Algo.git"
+  },
+  "keywords": [
+    "Algo"
+  ],
+  "author": "Duyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theUyonator/Data_Struct_-_Algo/issues"
+  },
+  "homepage": "https://github.com/theUyonator/Data_Struct_-_Algo#readme"
+}
