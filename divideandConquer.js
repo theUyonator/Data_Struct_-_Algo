@@ -375,4 +375,4 @@ const kthLargest = (nums, k) => {
 console.log(kthLargest([3,2,1,5,6,4], 2));
 console.log(kthLargest([3,2,3,1,2,4,5,5,6], 4));
 // Export functions for testing
-module.exports ={ countZeroes, sortedFrequency, findRotatedIndex, findRotationCount, findFloor };
+module.exports = { countZeroes, sortedFrequency, findRotatedIndex, findRotationCount, findFloor };
